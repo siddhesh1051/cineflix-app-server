@@ -24,7 +24,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log(`DB Connetion Successfull on ${process.env.MONGO_URI}`);
+    console.log(`DB Connetion Successfull`);
   })
   .catch((err) => {
     console.log("error in connecting db");
@@ -42,11 +42,7 @@ mongoose
 // );
 
 app.use(
-  cors({
-    origin: ["https://www.cineflix.live","https://cineflix.live","https://cineflix-pro.onrender.com","https://cineflix-pro.vercel.app","http://localhost:3000"],
-    methods: ["GET", "POST","PUT","DELETE"],
-    credentials: true,
-  })
+  cors()
 );
 
 // app.use(cookieParser());
